@@ -10,9 +10,6 @@ readme = "README.md"
 requires-python = ">=3.8"
 license = "MIT"
 keywords = []
-# authors = [
-#   { name = "Daniel Probst", email = "daenuprobst@gmail.com" },
-# ]
 classifiers = [
   "Development Status :: 4 - Beta",
   "Programming Language :: Python",
