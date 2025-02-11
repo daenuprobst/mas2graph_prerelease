@@ -15,7 +15,7 @@
 <!-- ```console -->
 <!-- pip install mas2graph -->
 <!-- ``` -->
-or
+<!--or-->
 ```console
 pip install -e .
 ```
