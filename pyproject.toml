@@ -1,0 +1,72 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+name = "mas2graph"
+dynamic = ["version"]
+description = ''
+readme = "README.md"
+requires-python = ">=3.8"
+license = "MIT"
+keywords = []
+authors = [
+  { name = "Daniel Probst", email = "daenuprobst@gmail.com" },
+]
+classifiers = [
+  "Development Status :: 4 - Beta",
+  "Programming Language :: Python",
+  "Programming Language :: Python :: 3.8",
+  "Programming Language :: Python :: 3.9",
+  "Programming Language :: Python :: 3.10",
+  "Programming Language :: Python :: 3.11",
+  "Programming Language :: Python :: 3.12",
+  "Programming Language :: Python :: Implementation :: CPython",
+  "Programming Language :: Python :: Implementation :: PyPy",
+]
+dependencies = [
+  "molsetrep",
+  "ms2deepscore",
+  "matchms",
+  "spec2vec",
+  "scikit-learn",
+  "wandb",
+  "ms2deepscore",
+  "matchms",
+  # "massspecgym",
+  "numpy==1.26.4",
+]
+
+[project.urls]
+Documentation = "https://github.com/Daniel Probst/mas2graph#readme"
+Issues = "https://github.com/Daniel Probst/mas2graph/issues"
+Source = "https://github.com/Daniel Probst/mas2graph"
+
+[tool.hatch.version]
+path = "src/mas2graph/__about__.py"
+
+[tool.hatch.envs.types]
+extra-dependencies = [
+  "mypy>=1.0.0",
+]
+[tool.hatch.envs.types.scripts]
+check = "mypy --install-types --non-interactive {args:src/mas2graph tests}"
+
+[tool.coverage.run]
+source_pkgs = ["mas2graph", "tests"]
+branch = true
+parallel = true
+omit = [
+  "src/mas2graph/__about__.py",
+]
+
+[tool.coverage.paths]
+mas2graph = ["src/mas2graph", "*/mas2graph/src/mas2graph"]
+tests = ["tests", "*/mas2graph/tests"]
+
+[tool.coverage.report]
+exclude_lines = [
+  "no cov",
+  "if __name__ == .__main__.:",
+  "if TYPE_CHECKING:",
+]
